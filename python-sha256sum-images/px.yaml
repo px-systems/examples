@@ -7,6 +7,8 @@ num_nodes: 3
 resources:
   infra: gcp/us-central1
   cpus: 2
+  disk_size: 10
+  disk_tier: low
   use_spot: true
   ports:
     - 8020
