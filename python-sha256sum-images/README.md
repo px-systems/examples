@@ -46,13 +46,13 @@ This example ships its own `px.yaml` because it needs `file_mounts` to access th
 Spin up a cluster with it (run from this directory so `px` picks up `./px.yaml`):
 
 ```bash
-px cluster up my-cluster
+px cluster up images
 ```
 
 Then submit the job:
 
 ```bash
-find images/ -type f | sed 's|^images/|/px-public-examples-dev/artemis-2-sample/|' | px job submit -c my-cluster -p 8 'python3 sha256sum.py'
+find images/ -type f | sed 's|^images/|/px-public-examples-dev/artemis-2-sample/|' | px job submit -c images -p 8 'python3 sha256sum.py'
 ```
 
 The cluster mounts the public bucket at `/px-public-examples-dev/` (defined in `px.yaml`'s `file_mounts` block).
@@ -74,5 +74,5 @@ Two important blocks in this example's `px.yaml`:
 When you're done, terminate the cluster to stop billing:
 
 ```bash
-px cluster down my-cluster
+px cluster down images
 ```
