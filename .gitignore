@@ -1,0 +1,65 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Swap Vim Files
+*~
+
+# Python
+*$py.class
+*.egg
+*.egg-info/
+*.py[cod]
+*.so
+.Python
+.breakpoint
+.coverage
+.eggs/
+.env/
+.hypothesis/
+.installed.cfg
+.ipynb_checkpoints
+.cache/
+.lsp
+.mypy_cache/
+.nox/
+.pytest_cache/
+.pytest_cache/
+.ruff_cache/
+.tox/
+.venv/
+/devenv
+/z-local
+ENV/
+MANIFEST
+__pycache__/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+env/
+htmlcov/
+lib/
+lib64/
+parts/
+sdist/
+var/
+venv/
+wheels/
+
+# Direnv
+.envrc
+.direnv/
+.env
+.env.lab
+.env.docker
+
+# Claude Code
+.claude/settings.local.json
+
+# Notes and docs
+.notes/
+
+# Others
+px.yaml.example
