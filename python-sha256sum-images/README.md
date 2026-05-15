@@ -19,7 +19,7 @@ On a cluster, the same command spreads the work across worker nodes.
 Download the sample from the public bucket into `./images/`:
 
 ```bash
-gsutil -m cp 'gs://px-public-examples-dev/artemis-2-sample/*' images/
+mkdir -p images && gsutil -m cp 'gs://px-public-examples-dev/artemis-2-sample/*' images/
 ```
 
 The glob (`*`) drops every object into `images/` without nesting an `artemis-2-sample/` subdir locally.
