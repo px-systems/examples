@@ -8,7 +8,7 @@ This example assumes you have PX installed and gcloud SDK configured with an act
 
 ## What this does
 
-`jpg-to-jxl.py` reads file paths (from argv or stdin), converts it to jxl, and prints the new file's path.
+`jpg-to-jxl.py` reads file paths (from argv or stdin), converts them to jxl, and prints a structured log line like `in=... | out=... | log=...`.
 We run it across 50 high-resolution Artemis II images that NASA released to the public domain.
 Locally, you'll see parallelism across your CPU cores.
 On a cluster, the same command spreads the work across worker nodes.
