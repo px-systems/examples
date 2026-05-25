@@ -5,8 +5,8 @@ library, a Python binding for ImageMagick.
 
 The script supports two input methods:
 
-1. Pass filenames as arguments: python jpg.py file1.jpg file2.jpg ...
-2. Pipe a list of filenames via stdin: cat file_list.txt | python jpg.py
+1. Pass filenames as arguments: python jpg-to-jxl.py file1.jpg file2.jpg ...
+2. Pipe a list of filenames via stdin: cat file_list.txt | python jpg-to-jxl.py
 
 Each file is processed sequentially within the current process, printing
 information about the conversion process to stdout.
