@@ -53,7 +53,7 @@ Then submit the job:
 
 ```bash
 # Generate an argument list of the files you want to convert. The cluster
-# mounts the bucket as defined inside you `file_mounts` section in px.yaml
+# mounts the bucket as defined inside your `file_mounts` section in px.yaml
 ssh jpg-to-jxl 'find /<REPLACE-WITH-YOUR-BUCKET-NAME> -name *.jpg' > jpg-to-jxl-args
 # Submit the job
 px job submit -c jpg-to-jxl -a jpg-to-jxl-args -p 4 '.venv/bin/python3 jpg-to-jxl.py'
