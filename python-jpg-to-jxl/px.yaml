@@ -1,0 +1,43 @@
+---
+# Cluster spec for the python-jpg-to-jxl example.
+# Full schema reference: https://px.app/docs/reference/px-yaml
+
+num_nodes: 3
+
+resources:
+  infra: gcp/us-central1
+  cpus: 2
+  disk_size: 10
+  disk_tier: low
+  use_spot: true
+  ports:
+    - 8020
+
+# Mount your bucket with jpg images in the cluster.
+# Jobs read images from this path on the cluster nodes.
+file_mounts:
+  /<REPLACE-WITH-YOUR-BUCKET-NAME>:
+    source: gs://<REPLACE-WITH-YOUR-BUCKET-NAME>
+    store: gcs
+
+workdir: .
+
+# The default GCP image already has python3, but we install it explicitly
+# so the setup pattern is visible. Runs once per node at cluster bring-up.
+setup: |
+  DEBIAN_FRONTEND=noninteractive sudo apt-get update
+  DEBIAN_FRONTEND=noninteractive sudo apt-get install --no-install-recommends \
+    --no-install-suggests -y \
+    python3 libmagickwand-dev
+
+  echo "Setting up uv..."
+  if [[ ! -f ~/.local/bin/uv ]]; then
+      curl -LsSf https://astral.sh/uv/install.sh | sh
+  else
+      uv self update
+  fi
+
+  echo "Setting up Python virtual environment..."
+  uv venv --allow-existing
+  uv sync
+

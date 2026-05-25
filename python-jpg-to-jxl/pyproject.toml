@@ -1,0 +1,8 @@
+[project]
+name = "jpg-to-jxl"
+version = "0.1.0"
+description = "PX Example - Converting jpg images to jxl"
+requires-python = ">=3.10"
+dependencies = [
+  "wand>=0.6.13",
+]
